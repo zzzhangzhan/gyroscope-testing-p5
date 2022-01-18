@@ -90,5 +90,5 @@ function draw() {
 
   document.getElementById("gammaV").innerHTML = rotationZ;
 
-  box(100);
+  box(200);
 }
