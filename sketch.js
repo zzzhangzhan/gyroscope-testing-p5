@@ -2,6 +2,9 @@ let permissionGranted = false;
 let cx, cy;
 let bx, by, bz;
 
+let div;
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   frameRate(30);
@@ -13,6 +16,17 @@ function setup() {
   bx = width/2;
   by = height/2;
   bz = 0;
+
+
+  div.html('Let's go!');
+
+   // Set the position of div element
+   div.position(60, 80);
+   // Set font-size of text
+ div.style('font-size', '24px');
+
+ // Set font-color of text
+ div.style('color', 'black');
 
   // DeviceOrientationEvent, DeviceMotionEvent
   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
@@ -57,31 +71,29 @@ function draw() {
   if (!permissionGranted) return;
 
   background(255);
-
-
-  // rotationX, rotationY
-  const dx = constrain(rotationY, -3, 3);
-  const dy = constrain(rotationX, -3, 3);
-  cx += dx*2;
-  cy += dy*2;
-  cx = constrain(cx, 0, width);
-  cy = constrain(cy, 0, height);
-  noFill();
-  ellipse(cx, cy, 200, 200);
-
+  //
+  // 2D rounds
+  // // rotationX, rotationY
+  // const dx = constrain(rotationY, -3, 3);
+  // const dy = constrain(rotationX, -3, 3);
+  // cx += dx*2;
+  // cy += dy*2;
+  // cx = constrain(cx, 0, width);
+  // cy = constrain(cy, 0, height);
+  // noFill();
+  // ellipse(cx, cy, 200, 200);
 
 
 
   // display variables
   fill(100);
   noStroke();
-  text("alpha: " + rotationX, 25, 25);
-  text("beta: " + rotationY, 25, 50);
-  text("gamma: " + rotationZ, 25, 75);
+  div.html("alpha: " + rotationX + "; beta:" + rotationY+ "; gamma:" + rotationZ);
+//  text("beta: " + rotationY, 25, 50);
+//  text("gamma: " + rotationZ, 25, 75);
+
   rotateX(rotationX);
   rotateY(rotationY);
   rotateZ(rotationZ);
   box(100);
-
-
 }
