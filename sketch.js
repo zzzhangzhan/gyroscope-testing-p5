@@ -76,12 +76,19 @@ function draw() {
   // display variables
   fill(100);
   noStroke();
-  //text("alpha: " + rotationX, 25, 25);
+  //text("alpha: " + rotationY, 25, 50);
 //  text("beta: " + rotationY, 25, 50);
 //  text("gamma: " + rotationZ, 25, 75);
 
   rotateX(rotationX);
   rotateY(rotationY);
   rotateZ(rotationZ);
+
+  document.getElementById("alphaV").innerHTML = rotationX;
+
+  document.getElementById("alphaV").innerHTML = rotationY;
+
+  document.getElementById("gammaV").innerHTML = rotationZ;
+
   box(100);
 }
