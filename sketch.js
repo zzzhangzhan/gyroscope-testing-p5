@@ -79,8 +79,8 @@ function draw() {
   text("beta: " + rotationY, 25, 50);
   text("gamma: " + rotationZ, 25, 75);
   rotateX(rotationX);
-    rotateY(rotationX);
-    rotateZ(rotationZ);
+  rotateY(rotationY);
+  rotateZ(rotationZ);
   box(100);
 
 
