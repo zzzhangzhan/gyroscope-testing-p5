@@ -3,7 +3,9 @@ let cx, cy;
 let bx, by, bz;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  frameRate(30);
+
 
   cx = width/2;
   cy = height/2;
@@ -11,7 +13,6 @@ function setup() {
   bx = width/2;
   by = height/2;
   bz = 0;
-
 
   // DeviceOrientationEvent, DeviceMotionEvent
   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
@@ -55,7 +56,8 @@ function requestAccess() {
 function draw() {
   if (!permissionGranted) return;
 
-  //background(255);
+  background(255);
+
 
   // rotationX, rotationY
   const dx = constrain(rotationY, -3, 3);
@@ -64,7 +66,7 @@ function draw() {
   cy += dy*2;
   cx = constrain(cx, 0, width);
   cy = constrain(cy, 0, height);
-
+  noFill();
   ellipse(cx, cy, 200, 200);
 
 
@@ -75,9 +77,11 @@ function draw() {
   noStroke();
   text("alpha: " + rotationX, 25, 25);
   text("beta: " + rotationY, 25, 50);
-  fill(255, 0, 0);
   text("gamma: " + rotationZ, 25, 75);
-
+  rotateX(rotationX);
+    rotateY(rotationX);
+    rotateZ(rotationZ);
+  box(100);
 
 
 }
