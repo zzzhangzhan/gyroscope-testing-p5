@@ -86,9 +86,9 @@ function draw() {
 
   document.getElementById("alphaV").innerHTML = rotationX;
 
-  document.getElementById("alphaV").innerHTML = rotationY;
+  document.getElementById("betaV").innerHTML = rotationY;
 
   document.getElementById("gammaV").innerHTML = rotationZ;
 
-  box(200);
+  box(300);
 }
