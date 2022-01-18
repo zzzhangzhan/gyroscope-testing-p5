@@ -2,7 +2,6 @@ let permissionGranted = false;
 let cx, cy;
 let bx, by, bz;
 
-let div;
 
 
 function setup() {
@@ -16,17 +15,6 @@ function setup() {
   bx = width/2;
   by = height/2;
   bz = 0;
-
-
-  div.html('Let's go!');
-
-   // Set the position of div element
-   div.position(60, 80);
-   // Set font-size of text
- div.style('font-size', '24px');
-
- // Set font-color of text
- div.style('color', 'black');
 
   // DeviceOrientationEvent, DeviceMotionEvent
   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
@@ -88,7 +76,7 @@ function draw() {
   // display variables
   fill(100);
   noStroke();
-  div.html("alpha: " + rotationX + "; beta:" + rotationY+ "; gamma:" + rotationZ);
+  //text("alpha: " + rotationX, 25, 25);
 //  text("beta: " + rotationY, 25, 50);
 //  text("gamma: " + rotationZ, 25, 75);
 

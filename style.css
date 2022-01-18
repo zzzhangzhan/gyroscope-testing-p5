@@ -5,3 +5,14 @@ html, body {
 canvas {
   display: block;
 }
+
+
+#monitor {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+p {
+    display: inline;
+}​
